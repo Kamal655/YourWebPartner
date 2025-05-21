@@ -1,10 +1,14 @@
 export default function Services() {
   return (
-    <div className="text-center mt-10">
-      <h1 className="text-3xl font-bold text-blue-600">Our Services</h1>
-      <p className="mt-4 text-gray-700">
-        We offer Web Design, Development, SEO, and Maintenance services tailored to your business needs.
-      </p>
+    <div className="max-w-4xl mx-auto px-4 py-10 text-gray-800">
+      <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">Our Services</h1>
+      <ul className="list-disc list-inside space-y-2 text-lg">
+        <li>Custom Website Design</li>
+        <li>Responsive Web Development</li>
+        <li>SEO Optimization</li>
+        <li>Website Maintenance & Support</li>
+        <li>UI/UX Design Consultation</li>
+      </ul>
     </div>
   );
 }
