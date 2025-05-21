@@ -1,54 +1,38 @@
-import { useState } from "react";
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setForm(prevForm => ({ ...prevForm, [name]: value }));
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    alert(`Thank you, ${form.name}, we will get back to you soon!`);
-    setForm({ name: "", email: "", message: "" });
-  }
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 text-gray-800">
-      <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">Contact Us</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="max-w-2xl mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold mb-6 text-blue-700">Contact Us</h1>
+      <form
+        action="https://formspree.io/f/xgvkqjzy" // 🔁 Replace with your real Formspree URL
+        method="POST"
+        className="space-y-4"
+      >
         <input
           type="text"
           name="name"
-          placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2"
+          placeholder="Your Name"
           required
+          className="w-full p-3 border border-gray-300 rounded"
         />
         <input
           type="email"
           name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2"
+          placeholder="Your Email"
           required
+          className="w-full p-3 border border-gray-300 rounded"
         />
         <textarea
           name="message"
-          placeholder="Message"
-          value={form.message}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2"
+          placeholder="Your Message"
+          rows="5"
           required
-        />
+          className="w-full p-3 border border-gray-300 rounded"
+        ></textarea>
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700"
         >
-          Submit
+          Send Message
         </button>
       </form>
     </div>
